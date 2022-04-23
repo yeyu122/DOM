@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d {
+            height: 200px;
+            width: 200px;
+            align-items: center;
+            margin: 100px auto;
+            background-color: aqua;
+        }
+        
+        input {
+            display: block;
+            margin: 0 auto;
+            color: #999;
+            text-align: center;
+        }
+        
+        p {
+            line-height: 100px;
+            margin: 0px auto;
+            position: absolute;
+            right: 200px;
+            bottom: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d">
+        <input type="text" name="txt" value="文本">
+        <p>12312213321</p>
+    </div>
+
+</body>
+<script>
+    // 1.获取元素 试过了，可以直接placeholder=‘’或者value=''
+    var text = document.querySelector('input');
+    // 2.注册事件 获得焦点事件 onfocus 
+    text.onfocus = function() {
+            // console.log('得到了焦点');
+            if (this.value === '文本') {
+                this.value = '';
+            }
+            // 获得焦点需要把文本框里面的文字颜色变黑
+            this.style.color = '#333';
+        }
+        // 3. 注册事件 失去焦点事件 onblur
+    text.onblur = function() {
+        // console.log('失去了焦点');
+        if (this.value === '') {
+            this.value = '文本';
+        }
+        // 失去焦点需要把文本框里面的文字颜色变浅色
+        this.style.color = '#999';
+    }
+</script>
+
+</html>

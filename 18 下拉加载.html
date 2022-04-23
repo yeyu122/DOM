@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>懒加载</title>
+    <style>
+        img {
+            width: 400px;
+            height: 300px;
+            display: block;
+        }
+        
+        .row {
+            width: 300px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <img class="rwo" src="img/1.gif" alt="" data-original="img/1.png">
+    <img class="rwo" src="img/1.gif" alt="" data-original="img/2.png" ">
+        <img class="rwo " src="img/1.gif " alt=" " data-original="img/3.png ">
+    <img class="rwo " src="img/1.gif " alt=" " data-original="img/4.png ">
+    <img class="rwo " src="img/1.gif " alt=" " data-original="img/5.png ">
+    <img class="rwo " src="img/1.gif " alt=" " data-original="img/6.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/2.png ">
+    <img src="img/1.gif " alt=" " data-original="img/3.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <img src="img/1.gif " alt=" " data-original="img/1.png ">
+    <script>
+        let view = document.documentElement.clientHeight;
+        // console.log(view)
+        function fn1() {
+            setTimeout(() => {
+            console.log(i);
+        }, 1000);
+            setTimeout(function lazyload() {
+                let imgs = document.querySelectorAll('img');
+                // console.log(imgs);
+                for (let item of imgs) {
+                    // 显示图片出现在浏览器的位置
+                    // console.log(imgs);
+                    let rect = item.getBoundingClientRect();
+                    console.log(rect);
+                    if (rect.bottom >= 0 && rect.top < view) {
+                        item.src = item.getAttribute('data-original')
+                    }
+                }
+            }, 1000)
+        }
+        fn1();
+        document.addEventListener('scroll', fn1)
+    </script>
+</body>
+
+</html>

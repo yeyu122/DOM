@@ -1,0 +1,333 @@
+<!doctype html>
+<html>
+<title>CeXS – Center for X-rays in Swedish Materials Science | KTH</title>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>纳米金属与先进表征课题组</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <!--头部开始-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>纳米金属与先进表征</title>
+    <link href="../../../../images/CSS-ktz.css" rel="stylesheet" type="text/css">
+
+    <div class="top">
+        <!--导航开始-->
+        <div class="header">
+            <div class="headtop">
+                <div class="headfirst">
+                    <!--logo开始-->
+                    <div class="logo">
+                        <a href="index.html"><img src='image/纳米5.png' width="560" height="185"></a>
+                        <!--logo结束-->
+                        <!--搜索框开始-->
+                        <div class="search">
+                            <div class="search_box">
+                                <div><img src="image/search.png"></div>
+                                <input type="text" placeholder="请输入要搜索的关键词">
+                                <button>搜索</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--搜索框结束-->
+
+
+    <!--导航栏开始-->
+    <div class="container">
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#">首页</a>
+                    <ul class="sub">
+                        <li><a href="#">组内新闻</a></li>
+                        <li><a href="#">获奖情况</a></li>
+                        <li><a href="#">学术会议</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">团队介绍</a></li>
+                <li><a href="#">团队成员</a>
+                    <ul class="sub">
+                        <li><a href="#">团队教师</a></li>
+                        <li><a href="#">在读学生</a></li>
+                        <li><a href="#">毕业学生</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">研究方向</a></li>
+                <li><a href="#">研究成果</a>
+                    <ul class="sub">
+                        <li><a href="#">论文</a></li>
+                        <li><a href="#">专利</a></li>
+                        <li><a href="#">专著</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">招生招聘</a></li>
+                <li><a href="#">资料下载</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!--导航栏结束-->
+    <!--导航结束-->
+
+    <!--照片滚动开始-->
+    <div class="shell">
+        <ul class="images">
+            <li class="img"></li>
+            <li class="img"></li>
+            <li class="img"></li>
+            <li class="img"></li>
+            <li class="img"></li>
+        </ul>
+        <ul class="min-images">
+            <li class="min"></li>
+            <li class="min"></li>
+            <li class="min"></li>
+            <li class="min"></li>
+            <li class="min"></li>
+        </ul>
+        <div class="button">
+            <div class="button-left">
+                <</div>
+                    <div class="button-right">></div>
+            </div>
+        </div>
+        <script>
+            let left = document.querySelector(".button-left")
+            let right = document.querySelector(".button-right")
+            let min = document.querySelectorAll(".min")
+            let images = document.querySelector(".images")
+            let index = 0
+            let time
+
+            function position() {
+                images.style.left = (index * -100) + "%"
+            }
+
+            function add() {
+                if (index >= min.length - 1) {
+                    index = 0
+                } else {
+                    index++
+                }
+            }
+
+            function desc() {
+                if (index < 1) {
+                    index = min.length - 1
+                } else {
+                    index--
+                }
+            }
+
+            function timer() {
+                time = setInterval(() => {
+                    index++
+                    desc()
+                    add()
+                    position()
+                }, 3000)
+            }
+            left.addEventListener("click", () => {
+                desc()
+                position()
+                clearInterval(time)
+                timer()
+            })
+            right.addEventListener("click", () => {
+                add()
+                position()
+                clearInterval(time)
+                timer()
+            })
+            for (let i = 0; i < min.length; i++) {
+                min[i].addEventListener("click", () => {
+                    index = i
+                    position()
+                    clearInterval(time)
+                    timer()
+                })
+            }
+            timer()
+        </script>
+        <!--照片滚动结束-->
+
+        <!--内容部分开始-->
+        <div class="content">
+            <!--Boss部分开始-->
+            <div class="Boss">
+                <div class="title">
+                    <h2>团队带头人</h2>
+                </div>
+                <div class="contents">
+                    <div class="contents-img">
+                        <div class="bd">
+                            <ul>
+                                <li>
+                                    <a herf="#"><img src="image/图片1.png"></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="list">
+                            <ul>
+                                <li>
+                                    <h3>重庆大学材料学院院长，国家级人才计划入选者，二级教授，担任重庆金属学会副理事长；材料基因组领域标准化工作技术委员会会员；Thermec系列国际会议国际顾问委员会委员；曾任国务院侨办“海外专家咨询委员会”委员和中国科学院学术委员会先进材料专门委员会委员。</h3>
+                                    <h4>致力于金属结构材料塑性变形机理及力学行为、位错结构的演变和纳米结构的形成、回复再结晶和晶粒长大机制以及钢铁材料中的相变晶体学、先进电子显微镜技术等方面的基础研究和应用研究。</h4>
+                                    <h5>目前已发表论文200余篇，其中包括:</h5>
+                                    <h6>Science （《科学》）4篇;Nature （《自然》）2篇；Proceedings of the National Academy of Sciences of the United States of America（《美国国家科学院院刊》（建称PNAS）1篇；Proceedings of The Royal Society A: Mathematical, Physical & Engineering Sciences
+                                        (《伦敦皇家学会会报，A辑：数学、物理学与工程学》) 2篇；Acta Materialia （美国《材料学报》）30篇；</h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Boss部分结束-->
+
+            <!--新闻开始-->
+            <div class="news">
+                <div class="title">
+                    <h2>学术动态</h2>
+                </div>
+                <div class="contents">
+                    <div class="contenter">
+
+                        <div class="a">
+                            <div class="b"></div>
+                            <div class="c">
+                                <div class="d dd"><img src="1.jpg" alt=""></div>
+                                <div class="d"><img src="2.jpg" alt=""></div>
+                                <div class="d"><img src="3.jpg" alt=""></div>
+                                <div class="d"><img src="4.jpg" alt=""></div>
+                                <div class="d"><img src="5.jpg" alt=""></div>
+                            </div>
+                        </div>
+                        <script>
+                            // 获取左边大图的元素
+                            let b = document.querySelector(".b")
+                                // 获取右边小图的所有元素
+                            let d = document.getElementsByClassName("d")
+
+                            let time1
+                            let index = 0
+
+                            // 设置一个重置函数
+                            let a = function() {
+                                    for (let i = 0; i < d.length; i++) {
+                                        d[i].className = "d"
+                                    }
+                                }
+                                // 设置一个选中函数
+                            let aa = function() {
+                                    // 先代入重置函数
+                                    a()
+                                    d[index].className = "d dd"
+                                }
+                                // 设置启动轮播图的时间函数
+                            function ts() {
+                                time1 = setInterval(function() {
+                                    aa()
+                                    index++
+                                    b.style.backgroundImage = "url('" + [index] + ".jpg')"
+                                    if (index == 5) {
+                                        index = 0
+                                    }
+                                }, 1500);
+                            }
+                            for (let i = 0; i < d.length; i++) {
+                                // 鼠标移动到当前小图片上时触发
+                                d[i].onmousemove = function() {
+                                    // 鼠标移动到当前小图片时右边大图片变成当前的小图片
+                                    b.style.backgroundImage = "url('" + [i + 1] + ".jpg')"
+                                        // 鼠标移动到小图片上面时关闭定时器并重置定时，
+                                        // 鼠标移开后再继续执行
+                                    a()
+                                    clearInterval(time1)
+                                    index = i + 1
+                                    ts()
+                                }
+                            }
+                            // 执行轮播图
+                            ts()
+                        </script>
+
+
+                    </div>
+                    <div class="list"></div>
+                </div>
+            </div>
+
+
+            <!--新闻结束-->
+
+            <!--课题组介绍开始-->
+            <div class="group">
+                <div class="title">
+                    <h2>课题组简介</h2>
+                </div>
+                <div class="introduct">
+                    <ul>
+                        <li>
+                            <h7>中国科学院上海硅酸盐研究所材料化学组成分析理论与应用课题组主要从事各种材料的化学组成分析的分析方法理论及其应用研究、相关仪器研制、应用软件开发、标准制定等，同时开展相关的对外检测服务、培训服务和技术咨询等服务，是国家大型科学仪器中心——上海无机质谱中心的挂靠部门。</h7>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <!--课题组介绍结束-->
+
+
+
+        </div>
+        <!--内容部分结束-->
+
+        <!--底部开始-->
+        <div class="down">
+            <div class="downs"></div>
+            <div class="xueyuan">
+                <div><img src="image/logo.png">
+                    <div>
+                    </div>
+                </div>
+                <!--底部结束-->
+</body>
+
+</html>
+<ul id="nav" class="clearfix">
+
+</ul>
+<!--#endeditable-->
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('li.mainlevel').mousemove(function() {
+            $(this).find('ul').slideDown(); //you can give it a speed
+        });
+        $('li.mainlevel').mouseleave(function() {
+            $(this).find('ul').stop(true, true).slideUp("fast");
+        });
+
+    });
+</script>
+</div>
+
+
+<div class="navi">
+</div>
+</div>
+<div class="banner"></div>
+</div>
+
+
+</body>
+
+</html>

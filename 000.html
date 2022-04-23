@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .a {
+            max-width: 100px;
+            max-height: 50px;
+            background-color: aqua;
+            line-height: 60px;
+            margin: 200px auto;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px 0px;
+            display: block;
+            /* background-image: linear-gradient(aqua, rgb(6, 36, 36)); */
+        }
+        
+        .a h1 {
+            color: aliceblue;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .b {
+            display: none;
+            max-width: 100px;
+            max-height: 50px;
+            line-height: 50px;
+            border-radius: 10px;
+        }
+        
+        .b p {
+            background-color: rgb(0, 204, 177);
+            border-radius: 4px;
+        }
+        
+        .b p a {
+            text-decoration: none;
+            /* text-shadow: 2px 2px 1px 5px; */
+            color: black;
+        }
+        
+        .a:hover .b {
+            display: block;
+            transform: translateY(-10px);
+            transition: 1s 0.5s;
+        }
+        
+        .a:hover {
+            transition: 1s 0.2s;
+            background-color: rgb(14, 179, 190);
+            transform: translateY(30px) scale(2);
+        }
+        
+        .b p:hover {
+            box-shadow: 2px 2px 10px 2px rgb(10, 10, 10);
+            border-radius: 100px;
+            transition: 0.5s;
+            transform: perspective(800px) rotateX(20deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">
+        <h1>你好</h1>
+        <div class="b">
+            <p>
+                <a href="#">hello</a>
+            </p>
+            <p>
+                <a href="#">hello</a>
+            </p>
+            <p>
+                <a href="#">hello</a>
+            </p>
+            <p>
+                <a href="#">hello</a>
+            </p>
+            <p>
+                <a href="#">hello</a>
+            </p>
+        </div>
+    </div>
+</body>
+<script>
+    for (var i = 0; i < 15; i++) {
+        setTimeout(() => {
+            console.log(i);
+        }, 1000);
+    }
+
+    function count() {
+        for (let i = 0; i < 5; i++) {
+            setTimeout(() => {
+                if (i == 4) {
+                    for (var i = 0; i < 15; i++) {
+
+                        console.log(i);
+
+                    }
+                } else {
+                    console.log("no");
+                }
+            }, 1000 * i);
+        }
+    }
+    count()
+</script>
+
+</html>

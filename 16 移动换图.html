@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #a {
+            height: 300px;
+            width: 200px;
+            background-color: aqua;
+            margin: 200px auto;
+        }
+        
+        .a img {
+            height: 180px;
+            width: 200px;
+        }
+        
+        .b img {
+            height: 90px;
+            margin-top: 20px;
+            text-align: center;
+            position: relative;
+            left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="a">
+        <div class="a">
+            <img src="img/1.png" alt="图片">
+        </div>
+        <div class="b">
+            <img src="img/1.png" alt="">
+            <img src="img/2.png" alt="">
+            <img src="img/3.png" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    var a = document.querySelector(".a").querySelector("img");
+    var b = document.querySelector(".b").querySelectorAll('img');
+    // console.log(a);
+    // console.log(b);
+    for (var i = 0; i < b.length; i++) {
+        b[i].onmouseover = function() {
+            a.src = this.src;
+            console.log(this.src)
+        }
+
+    }
+</script>
+
+</html>

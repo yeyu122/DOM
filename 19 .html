@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        input {
+            display: block;
+            border: 1px solid #090;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            margin: 50px auto;
+            text-indent: 2em;
+        }
+        
+        p {
+            width: 180px;
+            padding-left: 10px;
+            padding-right: 10px;
+            height: 40px;
+            background: #090;
+            color: #fff;
+            line-height: 40px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" name="agree" id="a" checked=false>
+    <script>
+        alert(document.getElementById("a").checked = false);
+    </script>
+    <input type="text" id='btn' disable='disable' value="" placeholder="请输入路由地址">
+    <p id="title"></p>
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oTi = document.getElementById('title');
+        oBtn.addEventListener("input", getWord, false);
+        // var ie = !!window.ActiveXObject;  
+        //    if(ie){  
+        //        oBtn.onpropertychange = getWord;  
+        //    }else{  
+        //        oBtn.addEventListener("input",getWord,false);  
+        //    }  
+        function getWord() {
+            oTi.innerHTML = oBtn.value;
+        }
+        var p1 = new Person(18, 'zs')
+        var p2 = new Person(180000, 'ww')
+
+        function Person(age, name) {
+            this.age = age;
+            this.name = name
+            console.log(this) // 此处 this 分别指向 Person 的实例对象 p1 p2
+        }
+        console.log(p1);
+        console.log(p2);
+
+
+
+
+
+
+        // var obj = {
+        //     fn: function() {
+        //         console.log(this); // obj
+        //     }
+        // }
+        // obj.fn();
+
+
+
+        // var Person = {
+        //     name: "lixue",
+        //     age: 21
+        // }
+
+        // function fn(x, y) {
+        //     console.log(x + "," + y);
+        //     console.log(this);
+        //     console.log(this.name);
+        //     console.log(this.age);
+        // }
+        // fn.call(Person, "hh", 20);
+    </script>
+</body>
+
+</html>

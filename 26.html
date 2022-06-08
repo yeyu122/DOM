@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+        }
+        
+        .a {
+            background-color: rgb(218, 0, 0);
+        }
+        
+        .b {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">x</div>
+    <div class="b">xtgl</div>
+</body>
+<script>
+    var str = 0;
+    var a = document.querySelector(".a");
+    var b = document.querySelector(".b");
+    // a.onclick = function() {
+    //     if (str == 0) {
+    //         b.style.background = 'rgb(218, 0, 0)';
+    //         str = 1;
+    //         console.log('点击1', str)
+    //     } else {
+    //         b.style.background = 'blue';
+    //         str = 0;
+    //         console.log('点击2', str)
+    //     }
+    // }
+    a.addEventListener("click", function() {
+        if (str == 0) {
+            b.style.background = 'rgb(218, 0, 0)';
+            str = 1;
+        } else {
+            b.style.background = 'blue';
+            str = 0;
+        }
+
+    })
+</script>
+
+</html>

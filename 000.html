@@ -41,7 +41,7 @@
         
         .b p {
             background-color: rgb(0, 204, 177);
-            border-radius: 4px;
+            border-radius: 22px;
         }
         
         .b p a {
@@ -94,7 +94,7 @@
     </div>
 </body>
 <script>
-    for (var i = 0; i < 15; i++) {
+    for (var i = 0; i < 8; i++) {
         setTimeout(() => {
             console.log(i);
         }, 1000);
@@ -104,10 +104,8 @@
         for (let i = 0; i < 5; i++) {
             setTimeout(() => {
                 if (i == 4) {
-                    for (var i = 0; i < 15; i++) {
-
+                    for (let i = 0; i < 5; i++) {
                         console.log(i);
-
                     }
                 } else {
                     console.log("no");

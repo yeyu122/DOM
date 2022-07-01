@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .a {
+            width: 800px;
+            height: 600px;
+            background-color: pink;
+            margin: 2% auto;
+            text-align: center;
+            position: relative;
+            border-radius: 14px;
+        }
+        
+        .b {
+            box-shadow: 2px 2px 10px rgba(16, 41, 55, 0.47);
+            border-radius: 14px;
+            position: absolute;
+            width: 300px;
+            height: 50px;
+            background-color: rgb(11, 228, 217);
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+            overflow: visible;
+        }
+        
+        p {
+            font-size: 40px;
+            color: aqua;
+            text-shadow: 2px 2px 5px rgb(255, 0, 0);
+        }
+        
+        input {
+            box-shadow: 2px 2px 10px rgba(16, 41, 55, 0.47);
+            border-radius: 8px;
+            background-color: rgb(11, 228, 217);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">
+        <p>年龄计算器</p>
+        <b>请输入您的岁数:</b>
+        <form>
+            <input class="class" id="val" type="text" maxlength="2" onblur="set()" />
+        </form>
+        <br>
+        <input type="button" name="button" value="获取" class="button" onclick="set()" />
+        <div class="b">
+            <p class="size_p"></p>
+        </div>
+    </div>
+</body>
+<script>
+    // button.addEventListener('click', set);
+    function set() {
+        let size_p = document.querySelector('.size_p');
+        let name1 = document.getElementById('val');
+        let name = document.querySelector('.class');
+        let b = document.querySelector('b');
+        let button = document.querySelector('.button');
+        let str1 = name1.value;
+        console.log(str1.length);
+        // var erval = setInterval(function() {
+        if (str1.length <= 0) {
+            b.innerHTML = '<b>请输入您的岁数:</b> ';
+            b.style.color = 'rgb(0, 0, 0)';
+            size_p.innerHTML = '<p>  </p> ';
+        } else if (str1.length >= 5) {
+            b.innerHTML = '<b>数字过长！请输入您的岁数:</b> ';
+            b.style.color = 'red';
+            // str1 == '' || str1 == undefined || str1 == null
+        } else if (!isNumber(str1)) {
+            b.innerHTML = '<b>不是有效数字，请填写数字！</b>';
+            b.style.color = 'red';
+        } else {
+            b.innerHTML = '是有效数字！';
+            b.style.color = 'rgb(0, 255, 162)';
+            size_p.innerHTML = '<p>您的年龄是:' + str1 + '</p> ';
+        }
+        // }, 1000);
+
+    }
+
+    function isNumber(value) { //验证是否为数字
+        var patrn = /^(-)?\d+(\.\d+)?$/;
+        if (patrn.exec(value) == null || value == "") {
+            return false
+        } else {
+            return true
+        }
+    }
+</script>
+
+</html>
